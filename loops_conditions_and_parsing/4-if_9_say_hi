@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script displays "Best School" 10 times using a while loop. The 9th iteration is followed by "Hi" on a new line.
+
+i=1
+
+# Initiate the while loop
+while [ $i -le 10 ]
+do
+	echo "Best School"
+	# Insert the condition for the loop to print "Hi" after the 9th iteration
+	if [[ "$i" == "9" ]]; then
+		echo "Hi"
+	fi
+
+	(( i++ ))
+done
