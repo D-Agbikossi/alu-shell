@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This script diplays the content of the file /etc/passwd, using the while loop + IFS.
+# The output format is "The user USERNAME is part of the GROUP_ID gang, lives in HOME_DIRECTORY and rides COMMAND/SHELL. USER ID's place is protected by the passcode PASSWORD, more info about the user here: USER ID INFO"
+
+file=/etc/passwd
+
+while IFS= read -r line
+do
+	username=$(echo "$line" | cut -d: -f1)
+	gip=$(echo "$line" | cut -d: -f4)
+	homedir=$(echo "$line" | cut -d: -f6)
+	shell=$(echo "$line" | cut -d: -f7)
+	userid=$(echo "$line" | cut -d: -f3)
+	password=$(echo "$line" | cut -d: -f2)
+	userinfo=$(echo "$line" | cut -d: -f5)
+
+	echo "The user $username is part of the $gip gang, lives in $homedir and rides $shell. $userid's place is protected by the passcode $password, more info about the user here: $userinfo"
+
+done < "$file"
