@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# This script displays numbers from 1 to 100. If the number is a mulriple of 3 and 5 it displays "FizzBuzz".
+# If the number is a multiple of 3 or 5, it displays respectfully "Fizz" and "Buzz". Otherwise, it displays 
+# the number.
+
+# Initiate the loop
+for num in {1..100}
+do
+
+	# Define the conditions and the results
+	if [ $((num % 3)) -eq 0 ] && [ $((num % 5)) -eq 0 ]; then
+		echo "FizzBuzz"
+	elif [ $((num % 3)) -eq 0 ]; then
+		echo "Fizz"
+	elif [ $((num % 5)) -eq 0 ]; then
+		echo "Buzz"
+	else
+		echo "$num"
+	fi
+
+done
