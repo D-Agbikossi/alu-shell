@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script is an infinite loop that stop when it is open  in another terminal.
+
+kill "$(pgrep -f 4-to_infinity_and_beyond)"
